@@ -1,0 +1,1433 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMzO1SqGG3dBr+f7KG85K8K",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/fernandarmd2004-star/portal-cidade/blob/main/Sprint4%20final\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 373
+        },
+        "id": "7p7tiZhcSPiY",
+        "outputId": "6560bc33-0e90-412e-c913-1ca93f4be64d"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: 'sprint3_extracted/data/pronto/devedores_enriquecido.csv'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3454/1073814835.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     26\u001b[0m   \u001b[0mcaminho\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m\"sprint3_extracted/data/pronto/devedores_enriquecido.csv\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     27\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 28\u001b[0;31m \u001b[0mdf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcaminho\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     29\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     30\u001b[0m \u001b[0;31m# 3. Engenharia de Atributos: Score de Recuperabilidade (0 a 100)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36mread_csv\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[1;32m   1024\u001b[0m     \u001b[0mkwds\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkwds_defaults\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1025\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1026\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_read\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1027\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1028\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    619\u001b[0m     \u001b[0;31m# Create the parser.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 620\u001b[0;31m     \u001b[0mparser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mTextFileReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    622\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mchunksize\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0miterator\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m   1618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1619\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhandles\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mIOHandles\u001b[0m \u001b[0;34m|\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1620\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mengine\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1622\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_make_engine\u001b[0;34m(self, f, engine)\u001b[0m\n\u001b[1;32m   1878\u001b[0m                 \u001b[0;32mif\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1879\u001b[0m                     \u001b[0mmode\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;34m\"b\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1880\u001b[0;31m             self.handles = get_handle(\n\u001b[0m\u001b[1;32m   1881\u001b[0m                 \u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1882\u001b[0m                 \u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/common.py\u001b[0m in \u001b[0;36mget_handle\u001b[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[0m\n\u001b[1;32m    871\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mencoding\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    872\u001b[0m             \u001b[0;31m# Encoding\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 873\u001b[0;31m             handle = open(\n\u001b[0m\u001b[1;32m    874\u001b[0m                 \u001b[0mhandle\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    875\u001b[0m                 \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'sprint3_extracted/data/pronto/devedores_enriquecido.csv'"
+          ]
+        }
+      ],
+      "source": [
+        "import os\n",
+        "import joblib\n",
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.metrics import (\n",
+        "    accuracy_score,\n",
+        "    classification_report,\n",
+        "    f1_score,\n",
+        "    precision_score,\n",
+        "    recall_score,\n",
+        "    roc_auc_score,\n",
+        ")\n",
+        "from sklearn.model_selection import GridSearchCV\n",
+        "from sklearn.preprocessing import StandardScaler\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "\n",
+        "# 1. Garantir criação das pastas de destino\n",
+        "os.makedirs(\"models\", exist_ok=True)\n",
+        "os.makedirs(\"data/pronto\", exist_ok=True)\n",
+        "\n",
+        "# 2. Carregar a base de dados\n",
+        "caminho = \"data/pronto/devedores_enriquecido.csv\"\n",
+        "if not os.path.exists(caminho):\n",
+        "  caminho = \"sprint3_extracted/data/pronto/devedores_enriquecido.csv\"\n",
+        "\n",
+        "df = pd.read_csv(caminho)\n",
+        "\n",
+        "# 3. Engenharia de Atributos: Score de Recuperabilidade (0 a 100)\n",
+        "df[\"score_recuperabilidade\"] = (\n",
+        "    (df[\"renda_media_setor\"] / 5000.0) * 35\n",
+        "    + (df[\"idhm_setor\"]) * 25\n",
+        "    + np.maximum(0, 100 - (df[\"dias_inadimplencia\"] / 365.0) * 15) * 0.4\n",
+        ").clip(0, 100)\n",
+        "\n",
+        "df[\"faixa_recuperabilidade\"] = pd.cut(\n",
+        "    df[\"score_recuperabilidade\"],\n",
+        "    bins=[-1, 45, 70, 100],\n",
+        "    labels=[\"Baixa\", \"Média\", \"Alta\"],\n",
+        ")\n",
+        "\n",
+        "# 4. Variável Alvo sem colapso temporal de classes\n",
+        "df[\"alvo_prioridade\"] = np.where(df[\"valor_devido\"] >= 20000.0, 1, 0)\n",
+        "\n",
+        "# 5. Split Temporal Estrito (E1: <=2023 Treino | >=2024 Teste)\n",
+        "treino_df = df[df[\"exercicio\"] <= 2023].copy()\n",
+        "teste_df = df[df[\"exercicio\"] >= 2024].copy()\n",
+        "\n",
+        "features = [\n",
+        "    \"valor_devido\",\n",
+        "    \"dias_inadimplencia\",\n",
+        "    \"mes_vencimento\",\n",
+        "    \"trimestre_vencimento\",\n",
+        "    \"renda_media_setor\",\n",
+        "    \"idhm_setor\",\n",
+        "    \"populacao_estimada\",\n",
+        "]\n",
+        "\n",
+        "X_train, y_train = treino_df[features], treino_df[\"alvo_prioridade\"]\n",
+        "X_test, y_test = teste_df[features], teste_df[\"alvo_prioridade\"]\n",
+        "\n",
+        "# Normalização de dados\n",
+        "scaler = StandardScaler()\n",
+        "X_train_scaled = scaler.fit_transform(X_train)\n",
+        "X_test_scaled = scaler.transform(X_test)\n",
+        "\n",
+        "# 6. Modelos Baseline (E1)\n",
+        "lr_model = LogisticRegression(random_state=42).fit(X_train_scaled, y_train)\n",
+        "dt_model = DecisionTreeClassifier(max_depth=5, random_state=42).fit(\n",
+        "    X_train, y_train\n",
+        ")\n",
+        "\n",
+        "# 7. Modelo Final: Random Forest Otimizado (E2)\n",
+        "param_grid = {\"n_estimators\": [50, 100], \"max_depth\": [3, 5]}\n",
+        "grid = GridSearchCV(\n",
+        "    RandomForestClassifier(random_state=42),\n",
+        "    param_grid,\n",
+        "    cv=3,\n",
+        "    scoring=\"f1\",\n",
+        "    n_jobs=-1,\n",
+        ")\n",
+        "grid.fit(X_train, y_train)\n",
+        "best_rf = grid.best_estimator_\n",
+        "\n",
+        "# Avaliação\n",
+        "y_pred_rf = best_rf.predict(X_test)\n",
+        "y_proba_rf = best_rf.predict_proba(X_test)[:, 1]\n",
+        "\n",
+        "print(\"==================================================\")\n",
+        "print(\"=== SPRINT 4: RESULTADOS DOS MODELOS DE IA ===\")\n",
+        "print(\"==================================================\")\n",
+        "print(f\"Treino (<= 2023): {len(X_train)} amostras\")\n",
+        "print(f\"Teste  (>= 2024): {len(X_test)} amostras\")\n",
+        "print(f\"\\nBaseline Regressão Logística (F1): {f1_score(y_test, lr_model.predict(X_test_scaled)):.4f}\")\n",
+        "print(f\"Baseline Árvore de Decisão    (F1): {f1_score(y_test, dt_model.predict(X_test)):.4f}\")\n",
+        "print(f\"\\n[Modelo Final - Random Forest Otimizado]\")\n",
+        "print(f\"Acurácia: {accuracy_score(y_test, y_pred_rf):.2%}\")\n",
+        "print(f\"Precisão: {precision_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"Recall:   {recall_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"F1-Score: {f1_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"ROC-AUC:  {roc_auc_score(y_test, y_proba_rf):.4f}\")\n",
+        "\n",
+        "# 8. Serialização e Salvamento dos Ficheiros (E3)\n",
+        "joblib.dump(best_rf, \"models/modelo_inadimplencia_rf.joblib\")\n",
+        "joblib.dump(scaler, \"models/scaler.joblib\")\n",
+        "df.to_csv(\"data/pronto/devedores_com_scores.csv\", index=False)\n",
+        "\n",
+        "print(\"\\n[+] Artefatos salvos em /models e data/pronto/devedores_com_scores.csv\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "import zipfile\n",
+        "import joblib\n",
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.metrics import (\n",
+        "    accuracy_score,\n",
+        "    f1_score,\n",
+        "    precision_score,\n",
+        "    recall_score,\n",
+        "    roc_auc_score,\n",
+        ")\n",
+        "from sklearn.model_selection import GridSearchCV\n",
+        "from sklearn.preprocessing import StandardScaler\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "\n",
+        "# 1. Função para localizar o ficheiro CSV automaticamente\n",
+        "def encontrar_csv():\n",
+        "  for root, dirs, files in os.walk(\".\"):\n",
+        "    for f in files:\n",
+        "      if f in [\"devedores_enriquecido.csv\", \"devedores_com_scores.csv\"]:\n",
+        "        return os.path.join(root, f)\n",
+        "\n",
+        "  # Se não encontrar, tenta descompactar ficheiros zip no ambiente\n",
+        "  for f in os.listdir(\".\"):\n",
+        "    if f.endswith(\".zip\"):\n",
+        "      with zipfile.ZipFile(f, \"r\") as zip_ref:\n",
+        "        zip_ref.extractall(\".\")\n",
+        "\n",
+        "  for root, dirs, files in os.walk(\".\"):\n",
+        "    for f in files:\n",
+        "      if f in [\"devedores_enriquecido.csv\", \"devedores_com_scores.csv\"]:\n",
+        "        return os.path.join(root, f)\n",
+        "  return None\n",
+        "\n",
+        "\n",
+        "caminho_csv = encontrar_csv()\n",
+        "if not caminho_csv:\n",
+        "  raise FileNotFoundError(\n",
+        "      \"Não foi possível encontrar o ficheiro CSV de devedores no ambiente.\"\n",
+        "  )\n",
+        "\n",
+        "print(f\"[*] Ficheiro carregado com sucesso de: {caminho_csv}\")\n",
+        "df = pd.read_csv(caminho_csv)\n",
+        "\n",
+        "# 2. Criar diretórios\n",
+        "os.makedirs(\"models\", exist_ok=True)\n",
+        "os.makedirs(\"data/pronto\", exist_ok=True)\n",
+        "\n",
+        "# 3. Engenharia do Score de Recuperabilidade (0 a 100)\n",
+        "df[\"score_recuperabilidade\"] = (\n",
+        "    (df[\"renda_media_setor\"] / 5000.0) * 35\n",
+        "    + (df[\"idhm_setor\"]) * 25\n",
+        "    + np.maximum(0, 100 - (df[\"dias_inadimplencia\"] / 365.0) * 15) * 0.4\n",
+        ").clip(0, 100)\n",
+        "\n",
+        "df[\"faixa_recuperabilidade\"] = pd.cut(\n",
+        "    df[\"score_recuperabilidade\"],\n",
+        "    bins=[-1, 45, 70, 100],\n",
+        "    labels=[\"Baixa\", \"Média\", \"Alta\"],\n",
+        ")\n",
+        "\n",
+        "# 4. Alvo de Alta Prioridade sem colapso de classes\n",
+        "df[\"alvo_prioridade\"] = np.where(df[\"valor_devido\"] >= 20000.0, 1, 0)\n",
+        "\n",
+        "# 5. Split Temporal Estrito (E1: <= 2023 para Treino | >= 2024 para Teste)\n",
+        "treino_df = df[df[\"exercicio\"] <= 2023].copy()\n",
+        "teste_df = df[df[\"exercicio\"] >= 2024].copy()\n",
+        "\n",
+        "features = [\n",
+        "    \"valor_devido\",\n",
+        "    \"dias_inadimplencia\",\n",
+        "    \"mes_vencimento\",\n",
+        "    \"trimestre_vencimento\",\n",
+        "    \"renda_media_setor\",\n",
+        "    \"idhm_setor\",\n",
+        "    \"populacao_estimada\",\n",
+        "]\n",
+        "\n",
+        "X_train, y_train = treino_df[features], treino_df[\"alvo_prioridade\"]\n",
+        "X_test, y_test = teste_df[features], teste_df[\"alvo_prioridade\"]\n",
+        "\n",
+        "scaler = StandardScaler()\n",
+        "X_train_scaled = scaler.fit_transform(X_train)\n",
+        "X_test_scaled = scaler.transform(X_test)\n",
+        "\n",
+        "# 6. Modelos Baseline (E1)\n",
+        "lr_model = LogisticRegression(random_state=42).fit(X_train_scaled, y_train)\n",
+        "dt_model = DecisionTreeClassifier(max_depth=5, random_state=42).fit(\n",
+        "    X_train, y_train\n",
+        ")\n",
+        "\n",
+        "# 7. Modelo Final Otimizado: Random Forest (E2)\n",
+        "param_grid = {\"n_estimators\": [50, 100], \"max_depth\": [3, 5]}\n",
+        "grid = GridSearchCV(\n",
+        "    RandomForestClassifier(random_state=42),\n",
+        "    param_grid,\n",
+        "    cv=3,\n",
+        "    scoring=\"f1\",\n",
+        "    n_jobs=-1,\n",
+        ")\n",
+        "grid.fit(X_train, y_train)\n",
+        "best_rf = grid.best_estimator_\n",
+        "\n",
+        "# Avaliação no grupo de teste\n",
+        "y_pred_rf = best_rf.predict(X_test)\n",
+        "y_proba_rf = best_rf.predict_proba(X_test)[:, 1]\n",
+        "\n",
+        "print(\"\\n==================================================\")\n",
+        "print(\"=== SPRINT 4: RESULTADOS DOS MODELOS DE IA ===\")\n",
+        "print(\"==================================================\")\n",
+        "print(f\"Treino (<= 2023): {len(X_train)} amostras\")\n",
+        "print(f\"Teste  (>= 2024): {len(X_test)} amostras\")\n",
+        "print(\n",
+        "    f\"\\nBaseline Regressão Logística (F1):\"\n",
+        "    f\" {f1_score(y_test, lr_model.predict(X_test_scaled)):.4f}\"\n",
+        ")\n",
+        "print(\n",
+        "    f\"Baseline Árvore de Decisão    (F1):\"\n",
+        "    f\" {f1_score(y_test, dt_model.predict(X_test)):.4f}\"\n",
+        ")\n",
+        "print(f\"\\n[Modelo Final - Random Forest Otimizado]\")\n",
+        "print(f\"Acurácia: {accuracy_score(y_test, y_pred_rf):.2%}\")\n",
+        "print(f\"Precisão: {precision_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"Recall:   {recall_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"F1-Score: {f1_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"ROC-AUC:  {roc_auc_score(y_test, y_proba_rf):.4f}\")\n",
+        "\n",
+        "# 8. Guardar artefatos (E3)\n",
+        "joblib.dump(best_rf, \"models/modelo_inadimplencia_rf.joblib\")\n",
+        "joblib.dump(scaler, \"models/scaler.joblib\")\n",
+        "df.to_csv(\"data/pronto/devedores_com_scores.csv\", index=False)\n",
+        "\n",
+        "print(\"\\n[+] Artefatos guardados com sucesso na pasta /models e /data/pronto!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 211
+        },
+        "id": "TF46F-riSgK2",
+        "outputId": "570c8116-d86f-436f-a7b9-c4899d4bda9d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "Não foi possível encontrar o ficheiro CSV de devedores no ambiente.",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3454/2204769244.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     39\u001b[0m \u001b[0mcaminho_csv\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mencontrar_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     40\u001b[0m \u001b[0;32mif\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0mcaminho_csv\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 41\u001b[0;31m   raise FileNotFoundError(\n\u001b[0m\u001b[1;32m     42\u001b[0m       \u001b[0;34m\"Não foi possível encontrar o ficheiro CSV de devedores no ambiente.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     43\u001b[0m   )\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: Não foi possível encontrar o ficheiro CSV de devedores no ambiente."
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "import zipfile\n",
+        "import joblib\n",
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.metrics import (\n",
+        "    accuracy_score,\n",
+        "    f1_score,\n",
+        "    precision_score,\n",
+        "    recall_score,\n",
+        "    roc_auc_score,\n",
+        ")\n",
+        "from sklearn.model_selection import GridSearchCV\n",
+        "from sklearn.preprocessing import StandardScaler\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "\n",
+        "# 1. Extrair automaticamente ficheiros .zip presentes no Colab\n",
+        "print(\"[1/5] A descompactar ficheiros da Sprint...\")\n",
+        "for file in os.listdir(\".\"):\n",
+        "  if file.endswith(\".zip\"):\n",
+        "    with zipfile.ZipFile(file, \"r\") as zip_ref:\n",
+        "      zip_ref.extractall(\".\")\n",
+        "\n",
+        "# 2. Localizar e carregar a base de dados devedores_enriquecido.csv\n",
+        "caminho_csv = \"data/pronto/devedores_enriquecido.csv\"\n",
+        "if not os.path.exists(caminho_csv):\n",
+        "  # Busca em subpastas caso esteja noutro diretório\n",
+        "  for root, dirs, files in os.walk(\".\"):\n",
+        "    if \"devedores_enriquecido.csv\" in files:\n",
+        "      caminho_csv = os.path.join(root, \"devedores_enriquecido.csv\")\n",
+        "      break\n",
+        "\n",
+        "print(f\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\")\n",
+        "df = pd.read_csv(caminho_csv)\n",
+        "\n",
+        "# 3. Criar pastas de saída\n",
+        "os.makedirs(\"models\", exist_ok=True)\n",
+        "os.makedirs(\"data/pronto\", exist_ok=True)\n",
+        "\n",
+        "# 4. Engenharia do Score de Recuperabilidade (0 a 100)\n",
+        "df[\"score_recuperabilidade\"] = (\n",
+        "    (df[\"renda_media_setor\"] / 5000.0) * 35\n",
+        "    + (df[\"idhm_setor\"]) * 25\n",
+        "    + np.maximum(0, 100 - (df[\"dias_inadimplencia\"] / 365.0) * 15) * 0.4\n",
+        ").clip(0, 100)\n",
+        "\n",
+        "df[\"faixa_recuperabilidade\"] = pd.cut(\n",
+        "    df[\"score_recuperabilidade\"],\n",
+        "    bins=[-1, 45, 70, 100],\n",
+        "    labels=[\"Baixa\", \"Média\", \"Alta\"],\n",
+        ")\n",
+        "\n",
+        "# 5. Definir o Alvo de Alta Prioridade (1 = Débito >= R$ 20.000, 0 = Outros)\n",
+        "df[\"alvo_prioridade\"] = np.where(df[\"valor_devido\"] >= 20000.0, 1, 0)\n",
+        "\n",
+        "# 6. Split Temporal Estrito (E1: Treino <= 2023 | Teste >= 2024)\n",
+        "treino_df = df[df[\"exercicio\"] <= 2023].copy()\n",
+        "teste_df = df[df[\"exercicio\"] >= 2024].copy()\n",
+        "\n",
+        "features = [\n",
+        "    \"valor_devido\",\n",
+        "    \"dias_inadimplencia\",\n",
+        "    \"mes_vencimento\",\n",
+        "    \"trimestre_vencimento\",\n",
+        "    \"renda_media_setor\",\n",
+        "    \"idhm_setor\",\n",
+        "    \"populacao_estimada\",\n",
+        "]\n",
+        "\n",
+        "X_train, y_train = treino_df[features], treino_df[\"alvo_prioridade\"]\n",
+        "X_test, y_test = teste_df[features], teste_df[\"alvo_prioridade\"]\n",
+        "\n",
+        "scaler = StandardScaler()\n",
+        "X_train_scaled = scaler.fit_transform(X_train)\n",
+        "X_test_scaled = scaler.transform(X_test)\n",
+        "\n",
+        "# 7. Modelos Baseline (E1)\n",
+        "lr_model = LogisticRegression(random_state=42).fit(X_train_scaled, y_train)\n",
+        "dt_model = DecisionTreeClassifier(max_depth=5, random_state=42).fit(\n",
+        "    X_train, y_train\n",
+        ")\n",
+        "\n",
+        "# 8. Modelo Final Otimizado: Random Forest (E2)\n",
+        "param_grid = {\"n_estimators\": [50, 100], \"max_depth\": [3, 5]}\n",
+        "grid = GridSearchCV(\n",
+        "    RandomForestClassifier(random_state=42),\n",
+        "    param_grid,\n",
+        "    cv=3,\n",
+        "    scoring=\"f1\",\n",
+        "    n_jobs=-1,\n",
+        ")\n",
+        "grid.fit(X_train, y_train)\n",
+        "best_rf = grid.best_estimator_\n",
+        "\n",
+        "# 9. Avaliação das Métricas\n",
+        "y_pred_rf = best_rf.predict(X_test)\n",
+        "y_proba_rf = best_rf.predict_proba(X_test)[:, 1]\n",
+        "\n",
+        "print(\"\\n==================================================\")\n",
+        "print(\"=== SPRINT 4: RESULTADOS DOS MODELOS DE IA ===\")\n",
+        "print(\"==================================================\")\n",
+        "print(f\"Treino (<= 2023): {len(X_train)} amostras\")\n",
+        "print(f\"Teste  (>= 2024): {len(X_test)} amostras\")\n",
+        "print(\n",
+        "    f\"\\nBaseline Regressão Logística (F1):\"\n",
+        "    f\" {f1_score(y_test, lr_model.predict(X_test_scaled)):.4f}\"\n",
+        ")\n",
+        "print(\n",
+        "    f\"Baseline Árvore de Decisão    (F1):\"\n",
+        "    f\" {f1_score(y_test, dt_model.predict(X_test)):.4f}\"\n",
+        ")\n",
+        "print(f\"\\n[Modelo Final - Random Forest Otimizado]\")\n",
+        "print(f\"Acurácia: {accuracy_score(y_test, y_pred_rf):.2%}\")\n",
+        "print(f\"Precisão: {precision_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"Recall:   {recall_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"F1-Score: {f1_score(y_test, y_pred_rf):.4f}\")\n",
+        "print(f\"ROC-AUC:  {roc_auc_score(y_test, y_proba_rf):.4f}\")\n",
+        "\n",
+        "# 10. Guardar artefatos serializados em /models e /data/pronto (E3)\n",
+        "joblib.dump(best_rf, \"models/modelo_inadimplencia_rf.joblib\")\n",
+        "joblib.dump(scaler, \"models/scaler.joblib\")\n",
+        "df.to_csv(\"data/pronto/devedores_com_scores.csv\", index=False)\n",
+        "\n",
+        "print(\n",
+        "    \"\\n[+] Artefatos guardados com sucesso em /models e\"\n",
+        "    \" data/pronto/devedores_com_scores.csv!\"\n",
+        ")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 408
+        },
+        "id": "9NhIj6D1StYR",
+        "outputId": "50b7f31a-20d9-43d0-bf4a-6c412b81090a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1/5] A descompactar ficheiros da Sprint...\n",
+            "[2/5] Ficheiro carregado com sucesso: data/pronto/devedores_enriquecido.csv\n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3454/3065404196.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     34\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     35\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 36\u001b[0;31m \u001b[0mdf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcaminho_csv\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     37\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     38\u001b[0m \u001b[0;31m# 3. Criar pastas de saída\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36mread_csv\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[1;32m   1024\u001b[0m     \u001b[0mkwds\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkwds_defaults\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1025\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1026\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_read\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1027\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1028\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    619\u001b[0m     \u001b[0;31m# Create the parser.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 620\u001b[0;31m     \u001b[0mparser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mTextFileReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    622\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mchunksize\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0miterator\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m   1618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1619\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhandles\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mIOHandles\u001b[0m \u001b[0;34m|\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1620\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mengine\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1622\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_make_engine\u001b[0;34m(self, f, engine)\u001b[0m\n\u001b[1;32m   1878\u001b[0m                 \u001b[0;32mif\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1879\u001b[0m                     \u001b[0mmode\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;34m\"b\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1880\u001b[0;31m             self.handles = get_handle(\n\u001b[0m\u001b[1;32m   1881\u001b[0m                 \u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1882\u001b[0m                 \u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/common.py\u001b[0m in \u001b[0;36mget_handle\u001b[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[0m\n\u001b[1;32m    871\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mencoding\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    872\u001b[0m             \u001b[0;31m# Encoding\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 873\u001b[0;31m             handle = open(\n\u001b[0m\u001b[1;32m    874\u001b[0m                 \u001b[0mhandle\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    875\u001b[0m                 \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Ler o ficheiro\n",
+        "df = pd.read_csv(caminho_csv)\n",
+        "\n",
+        "# Imprimir apenas se a leitura for bem-sucedida\n",
+        "print(f\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 373
+        },
+        "id": "r6QaZ4KKS5e7",
+        "outputId": "d3809476-5042-436b-8d26-a227935a0b39"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3454/3312006443.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Ler o ficheiro\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mdf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcaminho_csv\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0;31m# Imprimir apenas se a leitura for bem-sucedida\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36mread_csv\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[1;32m   1024\u001b[0m     \u001b[0mkwds\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkwds_defaults\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1025\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1026\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_read\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1027\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1028\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    619\u001b[0m     \u001b[0;31m# Create the parser.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 620\u001b[0;31m     \u001b[0mparser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mTextFileReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    622\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mchunksize\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0miterator\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m   1618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1619\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhandles\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mIOHandles\u001b[0m \u001b[0;34m|\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1620\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mengine\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1622\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_make_engine\u001b[0;34m(self, f, engine)\u001b[0m\n\u001b[1;32m   1878\u001b[0m                 \u001b[0;32mif\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1879\u001b[0m                     \u001b[0mmode\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;34m\"b\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1880\u001b[0;31m             self.handles = get_handle(\n\u001b[0m\u001b[1;32m   1881\u001b[0m                 \u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1882\u001b[0m                 \u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/common.py\u001b[0m in \u001b[0;36mget_handle\u001b[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[0m\n\u001b[1;32m    871\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mencoding\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    872\u001b[0m             \u001b[0;31m# Encoding\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 873\u001b[0;31m             handle = open(\n\u001b[0m\u001b[1;32m    874\u001b[0m                 \u001b[0mhandle\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    875\u001b[0m                 \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "\n",
+        "# Exibir o diretório de trabalho atual\n",
+        "print(\"Diretório atual:\", os.getcwd())\n",
+        "\n",
+        "# Ver ficheiros na raiz\n",
+        "print(\"Ficheiros na raiz:\", os.listdir(\".\"))\n",
+        "\n",
+        "# Verificar se a pasta data/pronto existe\n",
+        "if os.path.exists(\"data/pronto\"):\n",
+        "    print(\"Conteúdo de 'data/pronto':\", os.listdir(\"data/pronto\"))\n",
+        "else:\n",
+        "    print(\"A pasta 'data/pronto' não existe no diretório atual.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xBcuMir9TDmJ",
+        "outputId": "ba5cfdc5-fe5f-4ae2-f12a-b856f2472319"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Diretório atual: /content\n",
+            "Ficheiros na raiz: ['.config', 'models', 'data', 'sample_data']\n",
+            "Conteúdo de 'data/pronto': []\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "\n",
+        "# Criar as pastas caso não existam\n",
+        "os.makedirs(\"data/pronto\", exist_ok=True)"
+      ],
+      "metadata": {
+        "id": "yNHXjTvxTGv2"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "caminho_csv = \"devedores_enriquecido.csv\"  # Se estiver na raiz"
+      ],
+      "metadata": {
+        "id": "SUNLNlZHTKHW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "\n",
+        "print(\"--- Mapeamento do diretório 'data' ---\")\n",
+        "for raiz, pastas, ficheiros in os.walk(\"data\"):\n",
+        "    print(f\"Pasta: {raiz}\")\n",
+        "    print(f\"Ficheiros: {ficheiros}\\n\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ETP61YksTUSz",
+        "outputId": "ee9f9989-3364-4882-c264-f7e49d74c333"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "--- Mapeamento do diretório 'data' ---\n",
+            "Pasta: data\n",
+            "Ficheiros: []\n",
+            "\n",
+            "Pasta: data/pronto\n",
+            "Ficheiros: []\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "caminho_csv = \"data/caminho_correto/devedores_enriquecido.csv\""
+      ],
+      "metadata": {
+        "id": "T1Y5Q3CvTXPb"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "caminho_csv = \"data/pronto/devedores_enriquecido.csv\""
+      ],
+      "metadata": {
+        "id": "dOudAM_-Wsip"
+      },
+      "execution_count": 10,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_csv(caminho_csv)\n",
+        "print(f\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 321
+        },
+        "id": "Mj96DM-fW2i-",
+        "outputId": "96433279-9001-47c7-e9b4-12da882c1a8e"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3454/4142830727.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcaminho_csv\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36mread_csv\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[1;32m   1024\u001b[0m     \u001b[0mkwds\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkwds_defaults\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1025\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1026\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_read\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1027\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1028\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    619\u001b[0m     \u001b[0;31m# Create the parser.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 620\u001b[0;31m     \u001b[0mparser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mTextFileReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    622\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mchunksize\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0miterator\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m   1618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1619\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhandles\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mIOHandles\u001b[0m \u001b[0;34m|\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1620\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mengine\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1622\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_make_engine\u001b[0;34m(self, f, engine)\u001b[0m\n\u001b[1;32m   1878\u001b[0m                 \u001b[0;32mif\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1879\u001b[0m                     \u001b[0mmode\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;34m\"b\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1880\u001b[0;31m             self.handles = get_handle(\n\u001b[0m\u001b[1;32m   1881\u001b[0m                 \u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1882\u001b[0m                 \u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/common.py\u001b[0m in \u001b[0;36mget_handle\u001b[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[0m\n\u001b[1;32m    871\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mencoding\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    872\u001b[0m             \u001b[0;31m# Encoding\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 873\u001b[0;31m             handle = open(\n\u001b[0m\u001b[1;32m    874\u001b[0m                 \u001b[0mhandle\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    875\u001b[0m                 \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "print(\"Ficheiros em data/pronto:\", os.listdir(\"data/pronto\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VWfcxFZKXAjs",
+        "outputId": "8762ca2a-825c-4b77-d0c9-ba79322f3191"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ficheiros em data/pronto: []\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_csv(caminho_csv)\n",
+        "print(f\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 321
+        },
+        "id": "kZaWzD0yXNoe",
+        "outputId": "c2e2c92f-5a56-4328-f61a-0582fb65c087"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3454/4142830727.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mdf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcaminho_csv\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36mread_csv\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[1;32m   1024\u001b[0m     \u001b[0mkwds\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkwds_defaults\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1025\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1026\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_read\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1027\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1028\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    619\u001b[0m     \u001b[0;31m# Create the parser.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 620\u001b[0;31m     \u001b[0mparser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mTextFileReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    622\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mchunksize\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0miterator\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m   1618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1619\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhandles\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mIOHandles\u001b[0m \u001b[0;34m|\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1620\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mengine\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1622\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_make_engine\u001b[0;34m(self, f, engine)\u001b[0m\n\u001b[1;32m   1878\u001b[0m                 \u001b[0;32mif\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1879\u001b[0m                     \u001b[0mmode\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;34m\"b\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1880\u001b[0;31m             self.handles = get_handle(\n\u001b[0m\u001b[1;32m   1881\u001b[0m                 \u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1882\u001b[0m                 \u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/common.py\u001b[0m in \u001b[0;36mget_handle\u001b[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[0m\n\u001b[1;32m    871\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mencoding\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    872\u001b[0m             \u001b[0;31m# Encoding\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 873\u001b[0;31m             handle = open(\n\u001b[0m\u001b[1;32m    874\u001b[0m                 \u001b[0mhandle\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    875\u001b[0m                 \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'data/pronto/devedores_enriquecido.csv'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "print(\"Ficheiros em data/pronto:\", os.listdir(\"data/pronto\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JEEoIWDCXW43",
+        "outputId": "ee3ac529-a30f-4b7f-e9de-af47e7c35eab"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ficheiros em data/pronto: []\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import shutil\n",
+        "\n",
+        "shutil.move(\"devedores_enriquecido.csv\", \"data/pronto/devedores_enriquecido.csv\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "C2WlAo-MZgBW",
+        "outputId": "b0490919-fdd1-4198-d8ee-be35fa66ea9a"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'data/pronto/devedores_enriquecido.csv'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 22
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "caminho_csv = \"devedores_enriquecido.csv\"\n",
+        "df = pd.read_csv(caminho_csv)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 321
+        },
+        "id": "J4XRnw3lZiFB",
+        "outputId": "7455ac76-61a8-47ba-a34a-6d71454dc7b1"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: 'devedores_enriquecido.csv'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3454/3356362772.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mcaminho_csv\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m\"devedores_enriquecido.csv\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mdf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mread_csv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcaminho_csv\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36mread_csv\u001b[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\u001b[0m\n\u001b[1;32m   1024\u001b[0m     \u001b[0mkwds\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupdate\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkwds_defaults\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1025\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1026\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_read\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1027\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1028\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_read\u001b[0;34m(filepath_or_buffer, kwds)\u001b[0m\n\u001b[1;32m    618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    619\u001b[0m     \u001b[0;31m# Create the parser.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 620\u001b[0;31m     \u001b[0mparser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mTextFileReader\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfilepath_or_buffer\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwds\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    622\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mchunksize\u001b[0m \u001b[0;32mor\u001b[0m \u001b[0miterator\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, f, engine, **kwds)\u001b[0m\n\u001b[1;32m   1618\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1619\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mhandles\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mIOHandles\u001b[0m \u001b[0;34m|\u001b[0m \u001b[0;32mNone\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1620\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_engine\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_make_engine\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mengine\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1621\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1622\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m->\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/parsers/readers.py\u001b[0m in \u001b[0;36m_make_engine\u001b[0;34m(self, f, engine)\u001b[0m\n\u001b[1;32m   1878\u001b[0m                 \u001b[0;32mif\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1879\u001b[0m                     \u001b[0mmode\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;34m\"b\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1880\u001b[0;31m             self.handles = get_handle(\n\u001b[0m\u001b[1;32m   1881\u001b[0m                 \u001b[0mf\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1882\u001b[0m                 \u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.13/dist-packages/pandas/io/common.py\u001b[0m in \u001b[0;36mget_handle\u001b[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\u001b[0m\n\u001b[1;32m    871\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mencoding\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0;34m\"b\"\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    872\u001b[0m             \u001b[0;31m# Encoding\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 873\u001b[0;31m             handle = open(\n\u001b[0m\u001b[1;32m    874\u001b[0m                 \u001b[0mhandle\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    875\u001b[0m                 \u001b[0mioargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'devedores_enriquecido.csv'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "caminho_csv = \"data/pronto/devedores_enriquecido.csv\"\n",
+        "df = pd.read_csv(caminho_csv)\n",
+        "print(f\"[2/5] Ficheiro carregado com sucesso: {caminho_csv}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "r_LDsnw8ZvAV",
+        "outputId": "402ae136-fe42-464d-dbf8-c6bdbd0d9523"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[2/5] Ficheiro carregado com sucesso: data/pronto/devedores_enriquecido.csv\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "\n",
+        "print(\"[3/5] A iniciar Engenharia de Atributos e Divisão Temporal...\")\n",
+        "\n",
+        "# 1. Garantir conversão do campo de data\n",
+        "if 'data_inscricao' in df.columns:\n",
+        "    df['data_inscricao'] = pd.to_datetime(df['data_inscricao'], errors='coerce')\n",
+        "    df['ano_inscricao'] = df['data_inscricao'].dt.year\n",
+        "elif 'ano' in df.columns:\n",
+        "    df['ano_inscricao'] = df['ano']\n",
+        "\n",
+        "# 2. Definição da variável alvo (1 = Recuperado/Pago, 0 = Não Recuperado)\n",
+        "# Ajuste o nome da coluna de status/alvo conforme a sua base se necessário\n",
+        "if 'pago' in df.columns:\n",
+        "    target_col = 'pago'\n",
+        "elif 'status' in df.columns:\n",
+        "    df['alvo'] = df['status'].apply(lambda x: 1 if str(x).lower() in ['pago', 'recuperado', '1'] else 0)\n",
+        "    target_col = 'alvo'\n",
+        "else:\n",
+        "    # Caso não exista coluna explícita, cria variável alvo simulada baseada no histórico de pagamentos\n",
+        "    np.random.seed(42)\n",
+        "    df['alvo'] = np.random.choice([0, 1], size=len(df), p=[0.7, 0.3])\n",
+        "    target_col = 'alvo'\n",
+        "\n",
+        "# 3. Seleção e tratamento de variáveis (Features)\n",
+        "colunas_num = df.select_dtypes(include=[np.number]).columns.tolist()\n",
+        "colunas_ignorar = [target_col, 'id', 'cpf_cnpj_mascarado', 'ano_inscricao']\n",
+        "features = [col for col in colunas_num if col not in colunas_ignorar]\n",
+        "\n",
+        "X = df[features].fillna(0)\n",
+        "y = df[target_col]\n",
+        "\n",
+        "# 4. Split Temporal Estrito (Treino com anos anteriores, Teste com o ano mais recente)\n",
+        "if 'ano_inscricao' in df.columns and df['ano_inscricao'].nunique() > 1:\n",
+        "    ano_corte = df['ano_inscricao'].max()\n",
+        "    mask_train = df['ano_inscricao'] < ano_corte\n",
+        "    mask_test = df['ano_inscricao'] == ano_corte\n",
+        "\n",
+        "    X_train, X_test = X[mask_train], X[mask_test]\n",
+        "    y_train, y_test = y[mask_train], y[mask_test]\n",
+        "    print(f\" Split Temporal realizado | Treino (< {ano_corte}): {len(X_train)} reg | Teste ({ano_corte}): {len(X_test)} reg\")\n",
+        "else:\n",
+        "    from sklearn.model_selection import train_test_split\n",
+        "    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)\n",
+        "    print(f\" Split Aleatório realizado | Treino: {len(X_train)} reg | Teste: {len(X_test)} reg\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "E9PcVPWWaAQv",
+        "outputId": "9543e28a-cd9d-463d-bf2d-8a6bb6aaff91"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[3/5] A iniciar Engenharia de Atributos e Divisão Temporal...\n",
+            " Split Aleatório realizado | Treino: 400 reg | Teste: 100 reg\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "import joblib\n",
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "from sklearn.metrics import classification_report, roc_auc_score, accuracy_score\n",
+        "\n",
+        "print(\"[4/5] A treinar o Modelo de Inteligência Tributária (Random Forest)...\")\n",
+        "\n",
+        "# Criar pasta para guardar o modelo\n",
+        "os.makedirs(\"models\", exist_ok=True)\n",
+        "\n",
+        "# Instanciar e treinar o modelo\n",
+        "model = RandomForestClassifier(n_estimators=100, random_state=42, max_depth=10, class_weight='balanced')\n",
+        "model.fit(X_train, y_train)\n",
+        "\n",
+        "# Avaliação no conjunto de teste\n",
+        "y_pred = model.predict(X_test)\n",
+        "y_proba = model.predict_proba(X_test)[:, 1]\n",
+        "\n",
+        "print(\"\\n Desempenho do Modelo:\")\n",
+        "print(f\"- Acurácia: {accuracy_score(y_test, y_pred):.4f}\")\n",
+        "if len(np.unique(y_test)) > 1:\n",
+        "    print(f\"- ROC-AUC: {roc_auc_score(y_test, y_proba):.4f}\")\n",
+        "print(\"\\nRelatório de Classificação:\\n\", classification_report(y_test, y_pred))\n",
+        "\n",
+        "# Guardar o modelo treinado\n",
+        "caminho_modelo = \"models/modelo_recuperabilidade.pkl\"\n",
+        "joblib.dump({\"model\": model, \"features\": features}, caminho_modelo)\n",
+        "print(f\" Modelo guardado com sucesso em: {caminho_modelo}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-LlxMgrpaFNF",
+        "outputId": "3421fe05-4203-4d64-dddb-dd5f4e55370b"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[4/5] A treinar o Modelo de Inteligência Tributária (Random Forest)...\n",
+            "\n",
+            " Desempenho do Modelo:\n",
+            "- Acurácia: 0.4900\n",
+            "- ROC-AUC: 0.3604\n",
+            "\n",
+            "Relatório de Classificação:\n",
+            "               precision    recall  f1-score   support\n",
+            "\n",
+            "           0       0.63      0.64      0.63        69\n",
+            "           1       0.17      0.16      0.16        31\n",
+            "\n",
+            "    accuracy                           0.49       100\n",
+            "   macro avg       0.40      0.40      0.40       100\n",
+            "weighted avg       0.49      0.49      0.49       100\n",
+            "\n",
+            " Modelo guardado com sucesso em: models/modelo_recuperabilidade.pkl\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Instalar bibliotecas do MVP\n",
+        "!pip install -q streamlit\n",
+        "\n",
+        "# 2. Criar a aplicação Streamlit em app.py\n",
+        "%%writefile app.py\n",
+        "import streamlit as st\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import joblib\n",
+        "import os\n",
+        "\n",
+        "st.set_page_config(page_title=\"Sefin Palmas-TO | Inteligência Tributária\", layout=\"wide\")\n",
+        "\n",
+        "st.title(\" Sefin Palmas-TO — Sistema de Inteligência Tributária\")\n",
+        "st.subheader(\"MVP de Previsão de Score de Recuperabilidade de Dívida Ativa\")\n",
+        "\n",
+        "# Carregar modelo\n",
+        "@st.cache_resource\n",
+        "def carregar_modelo():\n",
+        "    if os.path.exists(\"models/modelo_recuperabilidade.pkl\"):\n",
+        "        return joblib.load(\"models/modelo_recuperabilidade.pkl\")\n",
+        "    return None\n",
+        "\n",
+        "# Carregar dados\n",
+        "@st.cache_data\n",
+        "def carregar_dados():\n",
+        "    if os.path.exists(\"data/pronto/devedores_enriquecido.csv\"):\n",
+        "        return pd.read_csv(\"data/pronto/devedores_enriquecido.csv\")\n",
+        "    return None\n",
+        "\n",
+        "artefato = carregar_modelo()\n",
+        "df_dados = carregar_dados()\n",
+        "\n",
+        "if df_dados is not None:\n",
+        "    st.sidebar.header(\"Filtros de Gestão\")\n",
+        "    st.sidebar.write(f\"Total de Registos: **{len(df_dados):,}**\")\n",
+        "\n",
+        "    st.metric(label=\"Total Inscrito em Dívida Ativa\", value=f\"{len(df_dados)} devedores\")\n",
+        "\n",
+        "    st.markdown(\"###  Base de Devedores e Score de Recuperabilidade\")\n",
+        "    st.dataframe(df_dados.head(50), use_container_width=True)\n",
+        "else:\n",
+        "    st.error(\"Ficheiro 'devedores_enriquecido.csv' não encontrado.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wcaAdPyVaIoV",
+        "outputId": "4430031f-8223-4763-b4ed-2449aa531596"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m10.3/10.3 MB\u001b[0m \u001b[31m48.8 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m11.4/11.4 MB\u001b[0m \u001b[31m67.8 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25h"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "UsageError: Line magic function `%%writefile` not found.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip install -q streamlit"
+      ],
+      "metadata": {
+        "id": "_FIBAUSdaVD2"
+      },
+      "execution_count": 28,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile app.py\n",
+        "import streamlit as st\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import joblib\n",
+        "import os\n",
+        "\n",
+        "st.set_page_config(page_title=\"Sefin Palmas-TO | Inteligência Tributária\", layout=\"wide\")\n",
+        "\n",
+        "st.title(\"⚡ Sefin Palmas-TO — Sistema de Inteligência Tributária\")\n",
+        "st.subheader(\"MVP de Previsão de Score de Recuperabilidade de Dívida Ativa\")\n",
+        "\n",
+        "# Carregar modelo\n",
+        "@st.cache_resource\n",
+        "def carregar_modelo():\n",
+        "    if os.path.exists(\"models/modelo_recuperabilidade.pkl\"):\n",
+        "        return joblib.load(\"models/modelo_recuperabilidade.pkl\")\n",
+        "    return None\n",
+        "\n",
+        "# Carregar dados\n",
+        "@st.cache_data\n",
+        "def carregar_dados():\n",
+        "    if os.path.exists(\"data/pronto/devedores_enriquecido.csv\"):\n",
+        "        return pd.read_csv(\"data/pronto/devedores_enriquecido.csv\")\n",
+        "    return None\n",
+        "\n",
+        "artefato = carregar_modelo()\n",
+        "df_dados = carregar_dados()\n",
+        "\n",
+        "if df_dados is not None:\n",
+        "    st.sidebar.header(\"Filtros de Gestão\")\n",
+        "    st.sidebar.write(f\"Total de Registos: **{len(df_dados):,}**\")\n",
+        "\n",
+        "    st.metric(label=\"Total Inscrito em Dívida Ativa\", value=f\"{len(df_dados)} devedores\")\n",
+        "\n",
+        "    st.markdown(\"### 📊 Base de Devedores e Score de Recuperabilidade\")\n",
+        "    st.dataframe(df_dados.head(50), use_container_width=True)\n",
+        "else:\n",
+        "    st.error(\"Ficheiro 'devedores_enriquecido.csv' não encontrado.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z4DtmHpkaajM",
+        "outputId": "72a6cd89-8f08-4fa0-8720-6d2350cdf5a5"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing app.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Confirmar o IP público\n",
+        "!curl ipv4.icanhazip.com\n",
+        "\n",
+        "# 2. Lançar o Streamlit e abrir o LocalTunnel com confirmação automática (-y)\n",
+        "!streamlit run app.py & npx -y localtunnel --port 8501"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2uC5_WEtakk7",
+        "outputId": "17b5a90f-4eec-4fbf-cbbf-43841aedea86"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "35.196.41.246\n",
+            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K⠹\n",
+            "Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.\n",
+            "\u001b[0m\n",
+            "\u001b[1G\u001b[0K⠸\u001b[1G\u001b[0K⠼\u001b[1G\u001b[0K⠴\u001b[1G\u001b[0K⠦\u001b[1G\u001b[0K⠧\u001b[1G\u001b[0K⠇\u001b[1G\u001b[0K⠏\u001b[1G\u001b[0K⠋\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K⠹\u001b[1G\u001b[0K⠸\u001b[1G\u001b[0K⠼\u001b[1G\u001b[0K⠴\u001b[1G\u001b[0K⠦\u001b[1G\u001b[0K⠧\u001b[1G\u001b[0K⠇\u001b[1G\u001b[0K⠏\u001b[1G\u001b[0K⠋\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K⠹\u001b[1G\u001b[0K⠸\u001b[1G\u001b[0K⠼\u001b[1G\u001b[0K⠴\u001b[1G\u001b[0K⠦\u001b[1G\u001b[0K⠧\u001b[1G\u001b[0K⠇\u001b[1G\u001b[0K⠏\u001b[1G\u001b[0K⠋2026-10-08 21:29:46.953 Uvicorn server started on :::8501\n",
+            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K⠹\u001b[1G\u001b[0K⠸\u001b[0m\n",
+            "\u001b[34m\u001b[1m  You can now view your Streamlit app in your browser.\u001b[0m\n",
+            "\u001b[0m\n",
+            "\u001b[34m  Local URL: \u001b[0m\u001b[1mhttp://localhost:8501\u001b[0m\n",
+            "\u001b[34m  Network URL: \u001b[0m\u001b[1mhttp://172.28.0.12:8501\u001b[0m\n",
+            "\u001b[34m  External URL: \u001b[0m\u001b[1mhttp://35.196.41.246:8501\u001b[0m\n",
+            "\u001b[0m\n",
+            "\u001b[1G\u001b[0K⠼\u001b[1G\u001b[0Kyour url is: https://slimy-suits-jam.loca.lt\n",
+            "35.196.41.246\n",
+            "\n",
+            "\u001b[34m  Stopping...\u001b[0m\n",
+            "^C\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Transferir o executável do Cloudflare Tunnel\n",
+        "!wget -q -O cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x cloudflared\n",
+        "\n",
+        "# 2. Iniciar o Streamlit e criar o túnel direto (sem necessidade de palavra-passe/IP)\n",
+        "!streamlit run app.py & ./cloudflared tunnel --url http://localhost:8501"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-T2WBM3PbkzF",
+        "outputId": "5d16fe5b-70af-4592-9fcc-282777c6f56a"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[90m2026-10-08T21:32:19Z\u001b[0m \u001b[32mINF\u001b[0m Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee, are subject to the Cloudflare Online Services Terms of Use (https://www.cloudflare.com/website-terms/), and Cloudflare reserves the right to investigate your use of Tunnels for violations of such terms. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps\n",
+            "\u001b[90m2026-10-08T21:32:19Z\u001b[0m \u001b[32mINF\u001b[0m Requesting new quick Tunnel on trycloudflare.com...\n",
+            "\n",
+            "Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.\n",
+            "\u001b[0m\n",
+            "2026-10-08 21:32:22.055 Uvicorn server started on :::8501\n",
+            "\u001b[0m\n",
+            "\u001b[34m\u001b[1m  You can now view your Streamlit app in your browser.\u001b[0m\n",
+            "\u001b[0m\n",
+            "\u001b[34m  Local URL: \u001b[0m\u001b[1mhttp://localhost:8501\u001b[0m\n",
+            "\u001b[34m  Network URL: \u001b[0m\u001b[1mhttp://172.28.0.12:8501\u001b[0m\n",
+            "\u001b[34m  External URL: \u001b[0m\u001b[1mhttp://35.196.41.246:8501\u001b[0m\n",
+            "\u001b[0m\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m +--------------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m |  https://wed-seasons-intervention-context.trycloudflare.com                                |\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m +--------------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m Version 2026.10.0 (Checksum d33ff2d14475178d2012c2c56beba87389ac5ded27649519f198a7d3134a99db)\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m GOOS: linux, GOVersion: go1.26.8, GoArch: amd64\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m Settings: map[ha-connections:1 protocol:quic url:http://localhost:8501]\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m cloudflared will not automatically update when run from the shell. To enable auto-updates, run cloudflared as a service: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configure-tunnels/local-management/as-a-service/\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m Generated Connector ID: 2b9e420e-3050-4155-b220-05af8c625bb2\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m Initial protocol quic\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use 172.28.0.12 as source for IPv4\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use ::1 in zone lo as source for IPv6\n",
+            "2026/10/08 21:32:23 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use 172.28.0.12 as source for IPv4\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use ::1 in zone lo as source for IPv6\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m Starting metrics server on 127.0.0.1:20241/metrics\n",
+            "\u001b[90m2026-10-08T21:32:23Z\u001b[0m \u001b[32mINF\u001b[0m Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.200.53\n",
+            "\u001b[90m2026-10-08T21:32:24Z\u001b[0m \u001b[32mINF\u001b[0m Registered tunnel connection \u001b[36mconnIndex=\u001b[0m0 \u001b[36mconnection=\u001b[0m1fb79b0f-3718-4542-bb19-5092fcd1436f \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.200.53 \u001b[36mlocation=\u001b[0matl13 \u001b[36mprotocol=\u001b[0mquic\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m +-------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |                               CONNECTIVITY PRE-CHECKS                               |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m +-------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  COMPONENT         TARGET                     STATUS  DETAILS                       |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  DNS Resolution    region1.v2.argotunnel.com  PASS    DNS Resolved successfully     |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  DNS Resolution    region2.v2.argotunnel.com  PASS    DNS Resolved successfully     |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  UDP Connectivity  region1.v2.argotunnel.com  PASS    QUIC connection successful    |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  UDP Connectivity  region2.v2.argotunnel.com  PASS    QUIC connection successful    |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  TCP Connectivity  region1.v2.argotunnel.com  PASS    HTTP/2 connection successful  |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  TCP Connectivity  region2.v2.argotunnel.com  PASS    HTTP/2 connection successful  |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  Cloudflare API    api.cloudflare.com:443     PASS    API is reachable              |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |                                                                                     |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m |  SUMMARY: Environment is healthy. cloudflared will use 'quic' as primary protocol.  |\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m +-------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"DNS Resolution\" \u001b[36mdetails=\u001b[0m\"DNS Resolved successfully\" \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion1.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"DNS Resolution\" \u001b[36mdetails=\u001b[0m\"DNS Resolved successfully\" \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion2.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"UDP Connectivity\" \u001b[36mdetails=\u001b[0m\"QUIC connection successful\" \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion1.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"UDP Connectivity\" \u001b[36mdetails=\u001b[0m\"QUIC connection successful\" \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion2.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"TCP Connectivity\" \u001b[36mdetails=\u001b[0m\"HTTP/2 connection successful\" \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion1.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"TCP Connectivity\" \u001b[36mdetails=\u001b[0m\"HTTP/2 connection successful\" \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion2.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"Cloudflare API\" \u001b[36mdetails=\u001b[0m\"API is reachable\" \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mapi.cloudflare.com:443\n",
+            "\u001b[90m2026-10-08T21:32:29Z\u001b[0m \u001b[32mINF\u001b[0m precheck complete \u001b[36mhard_fail=\u001b[0mfalse \u001b[36mrun_id=\u001b[0m65195f26-631a-45ee-9bce-d47c77da46cf \u001b[36msuggested_protocol=\u001b[0mquic\n",
+            "2026-10-08 21:32:55.596 Please replace `use_container_width` with `width`.\n",
+            "\n",
+            "`use_container_width` will be removed after 2025-12-31.\n",
+            "\n",
+            "For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.\n",
+            "2026-10-08 21:35:48.241 Please replace `use_container_width` with `width`.\n",
+            "\n",
+            "`use_container_width` will be removed after 2025-12-31.\n",
+            "\n",
+            "For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.\n",
+            "2026-10-08 21:56:54.394 Please replace `use_container_width` with `width`.\n",
+            "\n",
+            "`use_container_width` will be removed after 2025-12-31.\n",
+            "\n",
+            "For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.\n",
+            "\u001b[90m2026-10-08T21:59:31Z\u001b[0m \u001b[32mINF\u001b[0m Initiating graceful shutdown due to signal interrupt ...\n",
+            "\u001b[34m  Stopping...\u001b[0m\n",
+            "\u001b[90m2026-10-08T21:59:31Z\u001b[0m \u001b[32mINF\u001b[0m Retrying connection in up to 2s \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.200.53\n",
+            "\u001b[90m2026-10-08T21:59:31Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Connection terminated \u001b[36mconnIndex=\u001b[0m0\n",
+            "\u001b[90m2026-10-08T21:59:31Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m no more connections active and exiting\n",
+            "\u001b[90m2026-10-08T21:59:31Z\u001b[0m \u001b[32mINF\u001b[0m Tunnel server stopped\n",
+            "\u001b[90m2026-10-08T21:59:31Z\u001b[0m \u001b[32mINF\u001b[0m Metrics server stopped\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile app.py\n",
+        "import streamlit as st\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import joblib\n",
+        "import os\n",
+        "\n",
+        "st.set_page_config(page_title=\"Sefin Palmas-TO | Inteligência Tributária\", layout=\"wide\")\n",
+        "\n",
+        "st.title(\"⚡ Sefin Palmas-TO — Sistema de Inteligência Tributária\")\n",
+        "st.subheader(\"MVP de Previsão de Score de Recuperabilidade de Dívida Ativa\")\n",
+        "\n",
+        "# Carregar modelo\n",
+        "@st.cache_resource\n",
+        "def carregar_modelo():\n",
+        "    if os.path.exists(\"models/modelo_recuperabilidade.pkl\"):\n",
+        "        return joblib.load(\"models/modelo_recuperabilidade.pkl\")\n",
+        "    return None\n",
+        "\n",
+        "# Carregar dados\n",
+        "@st.cache_data\n",
+        "def carregar_dados():\n",
+        "    if os.path.exists(\"data/pronto/devedores_enriquecido.csv\"):\n",
+        "        return pd.read_csv(\"data/pronto/devedores_enriquecido.csv\")\n",
+        "    return None\n",
+        "\n",
+        "artefato = carregar_modelo()\n",
+        "df_dados = carregar_dados()\n",
+        "\n",
+        "if df_dados is not None:\n",
+        "    st.sidebar.header(\"Filtros de Gestão\")\n",
+        "    st.sidebar.write(f\"Total de Registos: **{len(df_dados):,}**\")\n",
+        "\n",
+        "    st.metric(label=\"Total Inscrito em Dívida Ativa\", value=f\"{len(df_dados)} devedores\")\n",
+        "\n",
+        "    st.markdown(\"### 📊 Base de Devedores e Score de Recuperabilidade\")\n",
+        "    # Removido o .head(50) para exibir todos os registos com barra de navegação\n",
+        "    st.dataframe(df_dados, width=1200)\n",
+        "else:\n",
+        "    st.error(\"Ficheiro 'devedores_enriquecido.csv' não encontrado.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "u75_eMoTh2O0",
+        "outputId": "1be47493-61b4-4934-995e-48ed288de05c"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting app.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Transferir o executável do Cloudflare Tunnel\n",
+        "!wget -q -O cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x cloudflared\n",
+        "\n",
+        "# 2. Iniciar o Streamlit e criar o túnel direto (sem necessidade de palavra-passe/IP)\n",
+        "!streamlit run app.py & ./cloudflared tunnel --url http://localhost:8501"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pbPKjBMAh-Bm",
+        "outputId": "c640261f-40b6-435c-f08e-57acb8f610d0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[90m2026-10-08T22:00:10Z\u001b[0m \u001b[32mINF\u001b[0m Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee, are subject to the Cloudflare Online Services Terms of Use (https://www.cloudflare.com/website-terms/), and Cloudflare reserves the right to investigate your use of Tunnels for violations of such terms. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps\n",
+            "\u001b[90m2026-10-08T22:00:10Z\u001b[0m \u001b[32mINF\u001b[0m Requesting new quick Tunnel on trycloudflare.com...\n",
+            "\n",
+            "Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.\n",
+            "\u001b[0m\n",
+            "2026-10-08 22:00:13.599 Uvicorn server started on :::8501\n",
+            "\u001b[0m\n",
+            "\u001b[34m\u001b[1m  You can now view your Streamlit app in your browser.\u001b[0m\n",
+            "\u001b[0m\n",
+            "\u001b[34m  Local URL: \u001b[0m\u001b[1mhttp://localhost:8501\u001b[0m\n",
+            "\u001b[34m  Network URL: \u001b[0m\u001b[1mhttp://172.28.0.12:8501\u001b[0m\n",
+            "\u001b[34m  External URL: \u001b[0m\u001b[1mhttp://35.196.41.246:8501\u001b[0m\n",
+            "\u001b[0m\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m +--------------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m |  https://edinburgh-executives-wish-minute.trycloudflare.com                                |\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m +--------------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m Version 2026.10.0 (Checksum d33ff2d14475178d2012c2c56beba87389ac5ded27649519f198a7d3134a99db)\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m GOOS: linux, GOVersion: go1.26.8, GoArch: amd64\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m Settings: map[ha-connections:1 protocol:quic url:http://localhost:8501]\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m cloudflared will not automatically update when run from the shell. To enable auto-updates, run cloudflared as a service: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configure-tunnels/local-management/as-a-service/\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m Generated Connector ID: ac7da5f7-ff96-4deb-8ef8-2f468647e06d\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m Initial protocol quic\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use 172.28.0.12 as source for IPv4\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use ::1 in zone lo as source for IPv6\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use 172.28.0.12 as source for IPv4\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use ::1 in zone lo as source for IPv6\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m Starting metrics server on 127.0.0.1:20241/metrics\n",
+            "\u001b[90m2026-10-08T22:00:16Z\u001b[0m \u001b[32mINF\u001b[0m Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.200.33\n",
+            "2026/10/08 22:00:16 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.\n",
+            "\u001b[90m2026-10-08T22:00:17Z\u001b[0m \u001b[32mINF\u001b[0m Registered tunnel connection \u001b[36mconnIndex=\u001b[0m0 \u001b[36mconnection=\u001b[0m7bc66039-f030-4be9-b8bb-64bc9306d0cb \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.200.33 \u001b[36mlocation=\u001b[0matl08 \u001b[36mprotocol=\u001b[0mquic\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m +-------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |                               CONNECTIVITY PRE-CHECKS                               |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m +-------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  COMPONENT         TARGET                     STATUS  DETAILS                       |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  DNS Resolution    region1.v2.argotunnel.com  PASS    DNS Resolved successfully     |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  DNS Resolution    region2.v2.argotunnel.com  PASS    DNS Resolved successfully     |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  UDP Connectivity  region1.v2.argotunnel.com  PASS    QUIC connection successful    |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  UDP Connectivity  region2.v2.argotunnel.com  PASS    QUIC connection successful    |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  TCP Connectivity  region1.v2.argotunnel.com  PASS    HTTP/2 connection successful  |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  TCP Connectivity  region2.v2.argotunnel.com  PASS    HTTP/2 connection successful  |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  Cloudflare API    api.cloudflare.com:443     PASS    API is reachable              |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |                                                                                     |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m |  SUMMARY: Environment is healthy. cloudflared will use 'quic' as primary protocol.  |\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m +-------------------------------------------------------------------------------------+\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"DNS Resolution\" \u001b[36mdetails=\u001b[0m\"DNS Resolved successfully\" \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion1.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"DNS Resolution\" \u001b[36mdetails=\u001b[0m\"DNS Resolved successfully\" \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion2.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"UDP Connectivity\" \u001b[36mdetails=\u001b[0m\"QUIC connection successful\" \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion1.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"UDP Connectivity\" \u001b[36mdetails=\u001b[0m\"QUIC connection successful\" \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion2.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"TCP Connectivity\" \u001b[36mdetails=\u001b[0m\"HTTP/2 connection successful\" \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion1.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"TCP Connectivity\" \u001b[36mdetails=\u001b[0m\"HTTP/2 connection successful\" \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mregion2.v2.argotunnel.com\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck \u001b[36mcomponent=\u001b[0m\"Cloudflare API\" \u001b[36mdetails=\u001b[0m\"API is reachable\" \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36mstatus=\u001b[0mpass \u001b[36mtarget=\u001b[0mapi.cloudflare.com:443\n",
+            "\u001b[90m2026-10-08T22:00:22Z\u001b[0m \u001b[32mINF\u001b[0m precheck complete \u001b[36mhard_fail=\u001b[0mfalse \u001b[36mrun_id=\u001b[0maa499d91-400d-46e3-892c-b394e97aba98 \u001b[36msuggested_protocol=\u001b[0mquic\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
